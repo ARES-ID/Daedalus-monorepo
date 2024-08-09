@@ -46,7 +46,7 @@ jobs:
         uses: timheuer/base64-to-file@v1
         with:
           fileName: "release.keystore"
-          fileDir: "${{ github.workspace }}/app/keystore"
+          fileDir: "${{ github.workspace }}/weighttracker/app/keystore"
           encodedString: ${{ secrets.KEYSTORE }}
 
       - name: Assemble
