@@ -1,0 +1,57 @@
+name: ci_weighttracker
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ synchronize, opened, reopened, ready_for_review ]
+
+defaults:
+    run:
+        working-directory: weighttracker
+
+jobs:
+  ci:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: oracle
+
+      - name: Setup Android SDK
+        uses: amyu/setup-android@v4
+        with:
+          cache-disabled: true
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Detekt
+        run: ./gradlew detekt
+
+      - name: Kotlinter
+        run: ./gradlew lintKotlin
+
+      - name: Lint
+        run: ./gradlew lint
+
+      - name: Check
+        run: ./gradlew check
+
+      - name: Decode keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: "release.keystore"
+          fileDir: "${{ github.workspace }}/weighttracker/app/keystore"
+          encodedString: ${{ secrets.KEYSTORE }}
+
+      - name: Assemble
+        run: ./gradlew assemble
+        env:
+          DAEDALUS_SIGNING_KEY: ${{ secrets.DAEDALUS_SIGNING_KEY }}
+          DAEDALUS_STORE_PASSWORD: ${{ secrets.DAEDALUS_STORE_PASSWORD }}
+          DAEDALUS_SIGNING_KEY_PASSWORD: ${{ secrets.DAEDALUS_SIGNING_KEY_PASSWORD }}

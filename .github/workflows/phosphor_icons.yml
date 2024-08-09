@@ -1,0 +1,45 @@
+name: ci_phosphor_icons
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ synchronize, opened, reopened, ready_for_review ]
+
+defaults:
+    run:
+        working-directory: libraries/phosphor-icons/app
+
+jobs:
+  ci:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: oracle
+
+      - name: Setup Android SDK
+        uses: amyu/setup-android@v4
+        with:
+          cache-disabled: true
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Detekt
+        run: ./gradlew detekt
+
+      - name: Kotlinter
+        run: ./gradlew lintKotlin
+
+      - name: Lint
+        run: ./gradlew lint
+
+      - name: Check
+        run: ./gradlew check
+
+      - name: Assemble
+        run: ./gradlew assemble
