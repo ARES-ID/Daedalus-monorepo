@@ -4,6 +4,10 @@ on:
     branches: [ main ]
     types: [ synchronize, opened, reopened, ready_for_review ]
 
+defaults:
+    run:
+        working-directory: libraries/app
+
 jobs:
   ci:
     runs-on: self-hosted
