@@ -31,6 +31,11 @@ kotlin {
     }
 }
 
+detekt {
+    baseline = file("$rootDir/../config/detekt/baseline.xml")
+    config.setFrom("$rootDir/../config/detekt/config.yml")
+}
+
 gradlePlugin {
     plugins {
         create("fontue") {

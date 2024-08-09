@@ -47,6 +47,11 @@ kotlin {
     }
 }
 
+detekt {
+    baseline = file("$rootDir/../config/detekt/baseline.xml")
+    config.setFrom("$rootDir/../config/detekt/config.yml")
+}
+
 dependencies {
     implementation(libs.androidxCore.coreKtx)
     implementation(libs.comJakewhartonTimer.timber)

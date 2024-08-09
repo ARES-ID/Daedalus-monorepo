@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.orgJetbrainsKotlinAndroid)
     alias(libs.plugins.ioGitlabArturboschDetekt)
     alias(libs.plugins.orgJmailenKotlinter)
+    alias(libs.plugins.orgJetbrainsKotlinPluginCompose)
 }
 
 android {
@@ -34,6 +35,11 @@ kotlin {
     }
 }
 
+detekt {
+    baseline = file("$rootDir/../../../config/detekt/baseline.xml")
+    config.setFrom("$rootDir/../../../config/detekt/config.yml")
+}
+
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(libs.versions.javaVersion.get())
@@ -42,6 +48,8 @@ java {
 }
 
 dependencies {
+    implementation(libs.androidxActivity.activityCompose)
+    implementation(libs.androidxComposeFoundation.foundation)
     implementation(libs.androidxCore.coreKtx)
     implementation(libs.androidxAppcompat.appcompat)
     implementation(libs.comGoogleAndroidMaterial.material)
