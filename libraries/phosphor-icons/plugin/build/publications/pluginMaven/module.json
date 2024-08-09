@@ -1,0 +1,150 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.rjspies",
+    "module": "fontue",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "fontue-1.0.0.jar",
+          "url": "fontue-1.0.0.jar",
+          "size": 14087,
+          "sha512": "2f8fd592edfb1c137a9f98dbadbc9c262370525e778285765a78db38de05a968662a219ae606f80f4125b262f2653bbcd858b1ee5465b7e3eedc2b1f495234fc",
+          "sha256": "6dc44e8ef7d8a59a421052ab5e2da773c8b67e0a624801c26bdffe6b846c44c6",
+          "sha1": "5fd37b7bbf32132f204b23a5f510e324f4e98a00",
+          "md5": "257559add6e960d69ce41dd6bc57e218"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 21,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.9.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "2.3.12"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-cio",
+          "version": {
+            "requires": "2.3.12"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-logging",
+          "version": {
+            "requires": "2.3.12"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "fontue-1.0.0.jar",
+          "url": "fontue-1.0.0.jar",
+          "size": 14087,
+          "sha512": "2f8fd592edfb1c137a9f98dbadbc9c262370525e778285765a78db38de05a968662a219ae606f80f4125b262f2653bbcd858b1ee5465b7e3eedc2b1f495234fc",
+          "sha256": "6dc44e8ef7d8a59a421052ab5e2da773c8b67e0a624801c26bdffe6b846c44c6",
+          "sha1": "5fd37b7bbf32132f204b23a5f510e324f4e98a00",
+          "md5": "257559add6e960d69ce41dd6bc57e218"
+        }
+      ]
+    },
+    {
+      "name": "javadocElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "fontue-1.0.0-javadoc.jar",
+          "url": "fontue-1.0.0-javadoc.jar",
+          "size": 261,
+          "sha512": "927f561b6ef179da24dbebd5b7ce384c86b093253129f86b077a1a16d674719cf3cfede7e4dcee03ebf481344323490fee34d2f173e9cf40cdb9653b0e3245fd",
+          "sha256": "302fe3d6d8d6af038b35283b9de8746942398ffe3a0970002ed7ca083eac4476",
+          "sha1": "091459b5ec5e77e060a014b7ce12191be8d67825",
+          "md5": "13f57fbc3a9458100d5f3c6ec1d944db"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "fontue-1.0.0-sources.jar",
+          "url": "fontue-1.0.0-sources.jar",
+          "size": 2935,
+          "sha512": "a608affc2bf75d9a2fb5e6074a4fc5bb2ee8fcf7298a9c2d5234ff0756c6c1d16a1d40526b214b3ed4b9cf4500b3b795d0e705e1b6f70aecee9a47366712f60c",
+          "sha256": "ea7c60f05fe182e78a91f59bc45479fdaf4250e10dc2a1fc250b4053ea05ad4c",
+          "sha1": "1ab3667d7fd10cabdc6dadda9e4d344980554b7a",
+          "md5": "d488b67fc8fadd7247d48ae9aeeea10a"
+        }
+      ]
+    }
+  ]
+}

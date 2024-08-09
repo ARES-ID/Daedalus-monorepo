@@ -1,0 +1,12 @@
+/build
+/r8-usage-report.txt
+/r8-seeds-report.txt
+/release
+/beta
+/keystore
+.gradle
+/local.properties
+.DS_Store
+/captures
+/.google-cloud
+/.idea
