@@ -6,7 +6,7 @@ on:
 
 defaults:
     run:
-        working-directory: libraries/app
+        working-directory: libraries/phosphor-icons/app
 
 jobs:
   ci:
