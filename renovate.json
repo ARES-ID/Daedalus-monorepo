@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  "reviewers": [
+    "rjspies"
+  ],
+  "branchPrefix": "Renovate/",
+  "rebaseWhen": "behind-base-branch",
+  "commitMessagePrefix": "Renovate: ",
+  "dependencyDashboard": true,
+  "prCreation": "immediate",
+  "packageRules": [
+    {
+      "description": "Automerge everything but major",
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "bump"
+      ],
+      "automerge": true
+    }
+  ]
+}
