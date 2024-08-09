@@ -13,9 +13,8 @@
   "prCreation": "immediate",
   "packageRules": [
     {
-      "description": "Automerge everything",
+      "description": "Automerge everything but major",
       "matchUpdateTypes": [
-        "major",
         "minor",
         "patch",
         "bump"
