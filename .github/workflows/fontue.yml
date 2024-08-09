@@ -1,4 +1,4 @@
-name: ci
+name: ci_fontue
 on:
   pull_request:
     branches: [ main ]

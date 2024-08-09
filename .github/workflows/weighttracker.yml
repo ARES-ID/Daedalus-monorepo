@@ -1,4 +1,4 @@
-name: ci
+name: ci_weighttracker
 on:
   pull_request:
     branches: [ main ]

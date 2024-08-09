@@ -1,4 +1,4 @@
-name: ci
+name: ci_phosphor_icons
 on:
   pull_request:
     branches: [ main ]
