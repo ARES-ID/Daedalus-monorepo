@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.orgJetbrainsKotlinAndroid)
     alias(libs.plugins.ioGitlabArturboschDetekt)
     alias(libs.plugins.orgJmailenKotlinter)
-    alias(libs.plugins.orgJetbrainsKotlinPluginCompose)
 }
 
 android {
@@ -25,13 +24,9 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro",
+                "proguard-rules.pro"
             )
         }
-    }
-
-    buildFeatures {
-        compose = true
     }
 }
 
@@ -50,8 +45,6 @@ java {
 }
 
 dependencies {
-    implementation(project(":phosphor-icons"))
-    implementation(libs.androidxCompose.material3)
     implementation(libs.androidxCore.coreKtx)
     implementation(libs.androidxAppcompat.appcompat)
     implementation(libs.comGoogleAndroidMaterial.material)
