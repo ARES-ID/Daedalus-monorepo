@@ -7,7 +7,7 @@ import androidx.compose.material.icons.rounded.PrivacyTip
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.rjspies.daedalus.ui.R
-import com.rjspies.daedalus.ui.common.SAVED_STATE_HANDLE_KEY_UI_STATE
+import com.rjspies.daedalus.ui.common.SavedStateHandleKeyUiState
 import org.koin.android.annotation.KoinViewModel
 
 @KoinViewModel
@@ -15,7 +15,7 @@ internal class SettingsViewModel(
     savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
     val uiState = savedStateHandle.getStateFlow(
-        key = SAVED_STATE_HANDLE_KEY_UI_STATE,
+        key = SavedStateHandleKeyUiState,
         initialValue = SettingsUiState(legals()),
     )
 

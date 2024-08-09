@@ -136,7 +136,7 @@ private fun rememberPersistentMarker(indices: IntRange): Map<Float, Marker> {
                     guideline = guideline,
                 ) {
                     init {
-                        indicatorSizeDp = INDICATOR_SIZE_DP
+                        indicatorSizeDp = IndicatorSizeDp
                     }
                 }
             }
@@ -146,4 +146,4 @@ private fun rememberPersistentMarker(indices: IntRange): Map<Float, Marker> {
     }
 }
 
-private const val INDICATOR_SIZE_DP = 6f
+private const val IndicatorSizeDp = 6f

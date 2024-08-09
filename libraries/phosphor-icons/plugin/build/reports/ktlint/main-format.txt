@@ -1,1 +1,0 @@
-/home/rjspies/Projects/fontue/src/main/kotlin/com/rjspies/fontue/FontueDownloadingTask.kt:31:26: Format fixed > [standard:no-unit-return] Unnecessary "Unit" return type

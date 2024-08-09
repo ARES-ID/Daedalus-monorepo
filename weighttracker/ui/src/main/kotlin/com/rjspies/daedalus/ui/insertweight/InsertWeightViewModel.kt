@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rjspies.daedalus.common.AddWeightError
 import com.rjspies.daedalus.domain.InsertWeightUseCase
-import com.rjspies.daedalus.ui.common.SAVED_STATE_HANDLE_KEY_UI_STATE
+import com.rjspies.daedalus.ui.common.SavedStateHandleKeyUiState
 import org.koin.android.annotation.KoinViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.StateFlow
@@ -17,20 +17,20 @@ internal class InsertWeightViewModel(
     private val insertWeightUseCase: InsertWeightUseCase,
 ) : ViewModel() {
     val uiState: StateFlow<InsertWeightUiState> = savedStateHandle.getStateFlow(
-        key = SAVED_STATE_HANDLE_KEY_UI_STATE,
+        key = SavedStateHandleKeyUiState,
         initialValue = InsertWeightUiState(),
     )
 
     fun setDismissDialog(dismissDialog: () -> Unit) {
-        savedStateHandle[SAVED_STATE_HANDLE_KEY_UI_STATE] = uiState.value.copy(dismissDialog = dismissDialog)
+        savedStateHandle[SavedStateHandleKeyUiState] = uiState.value.copy(dismissDialog = dismissDialog)
     }
 
     fun setError(error: AddWeightError?) {
-        savedStateHandle[SAVED_STATE_HANDLE_KEY_UI_STATE] = uiState.value.copy(error = error)
+        savedStateHandle[SavedStateHandleKeyUiState] = uiState.value.copy(error = error)
     }
 
     private fun setIsLoading(isLoading: Boolean) {
-        savedStateHandle[SAVED_STATE_HANDLE_KEY_UI_STATE] = uiState.value.copy(isLoading = isLoading)
+        savedStateHandle[SavedStateHandleKeyUiState] = uiState.value.copy(isLoading = isLoading)
     }
 
     fun insertWeight(weightValue: String) {
